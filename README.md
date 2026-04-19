@@ -44,4 +44,4 @@ Copy the `.env.example` files in each sub-project and fill in your values. **Nev
 
 ## License
 
-Private — all rights reserved.
+This project is licensed under the [Apache License 2.0](LICENSE).
