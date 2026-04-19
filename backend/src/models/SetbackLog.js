@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const relapseLogSchema = new mongoose.Schema(
+const setbackLogSchema = new mongoose.Schema(
   {
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
     trigger: { type: String, default: '' },
@@ -10,4 +10,4 @@ const relapseLogSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model('RelapseLog', relapseLogSchema);
+module.exports = mongoose.model('SetbackLog', setbackLogSchema);

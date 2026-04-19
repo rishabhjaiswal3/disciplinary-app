@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { getRelapses, logRelapse } = require('../controllers/relapse.controller');
+const { getSetbacks, logSetback } = require('../controllers/setback.controller');
 const { protect } = require('../middleware/auth.middleware');
 
 router.use(protect);
 
-router.get('/', getRelapses);
-router.post('/', logRelapse);
+router.get('/', getSetbacks);
+router.post('/', logSetback);
 
 module.exports = router;

@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const streakSchema = new mongoose.Schema(
   {
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-    type: { type: String, required: true },           // e.g. "nofap", "habits", "overall"
+    type: { type: String, required: true },           // e.g. "wrong_habit", "habits", "overall"
     currentStreak: { type: Number, default: 0 },
     longestStreak: { type: Number, default: 0 },
     lastActiveDate: { type: String, default: '' },    // "YYYY-MM-DD"
