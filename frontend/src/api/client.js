@@ -1,0 +1,22 @@
+import axios from 'axios';
+import * as SecureStore from 'expo-secure-store';
+
+const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:5000/api';
+
+const client = axios.create({
+  baseURL: API_BASE_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+// Attach JWT token to every request
+client.interceptors.request.use(async (config) => {
+  const token = await SecureStore.getItemAsync('token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+export default client;
